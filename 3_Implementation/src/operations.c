@@ -1,40 +1,25 @@
-#include "operations.h"
-#include<math.h>
-float total_ser(float r1, float r2,float r3)
-{ 
-    float b;
-    b=r1+r2+r3;
-    return b;
-}
-float total_par(float r1, float r2,float r3)
+#include "checkforwin.h"
+
+int checkforwin()
 {
-    float c;
-    c=((r1*r2*r3)/(r3*r2+r1*r3+r2*r1));
-    return c;
+    if(a[0]==a[1] && a[1]==a[2])
+        return 1;
+    else if(a[3]==a[4] && a[4]==a[5])
+        return 1;
+    else if(a[6]==a[7] && a[7]==a[8])
+        return 1;
+    else if(a[0]==a[3] && a[3]==a[6])
+        return 1;
+    else if(a[1]==a[4] && a[4]==a[7])
+        return 1;
+    else if(a[2]==a[5] && a[5]==a[8])
+        return 1;
+    else if(a[0]==a[4] && a[4]==a[8])
+        return 1;
+    else if(a[2]==a[4] && a[4]==a[6])
+        return 1;
+    else if(a[0]!='1' && a[1]!='2' && a[2]!='3' && a[3]!='4' && a[4]!='5' && a[5]!='6' && a[6]!='7' && a[7]!='8' && a[8]!='9')
+        return 0;
+    else
+        return -1;
 }
-float  cal_res (float v, float i)
-{
-    return(v/i);
-}
-double unit_conv1(double r )
-{
-   return r*pow(10,3);
-}
-double unit_conv2(double r )
-{
-    return r*pow(10,-3);
-}
-double unit_conv3(double r )
-{
-    return r*pow(10,6);
-}
-double unit_conv4(double r )
-{
-    return r*pow(10,-6);
-}
-int res_val(int a,int b,int c,int d)
-    {
-        int z;
-        z=((a*100)+(b*10)+(c))*pow(10,d);
-        return z;
-    }
